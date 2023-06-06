@@ -10,7 +10,7 @@
 int get_index(listint_t *head, int num)
 {
 	listint_t *temp = head;
-	int i = 1;
+	int i = 0;
 
 	while (temp->next != NULL && temp->n < num)
 	{
