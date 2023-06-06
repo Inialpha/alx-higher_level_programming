@@ -12,7 +12,7 @@ int get_index(listint_t *head, int num)
 	listint_t *temp = head;
 	int i = 0;
 
-	while (temp->next != NULL && temp->n < num)
+	while (temp != NULL && temp->n < num)
 	{
 		i++;
 		temp = temp->next;
@@ -37,6 +37,7 @@ listint_t *insert_node(listint_t **head, int number)
 		return (NULL);
 	new->n = number;
 
+	index = get_index(*head, number);
 	if (*head == NULL)
 	{
 		*head = new;
@@ -44,9 +45,8 @@ listint_t *insert_node(listint_t **head, int number)
 	}
 	else
 	{
-		index = get_index(*head, number);
 		temp = *head;
-		for (i = 0; i < index; i++)
+		for (i = 0; i < index - 1; i++)
 			temp = temp->next;
 		new->next = temp->next;
 		temp->next = new;
