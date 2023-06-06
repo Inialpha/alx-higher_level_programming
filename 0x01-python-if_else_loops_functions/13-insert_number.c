@@ -29,7 +29,7 @@ int get_index(listint_t *head, int num)
 
 listint_t *insert_node(listint_t **head, int number)
 {
-	listint_t *temp, *new;
+	listint_t *temp = *head, *new;
 	int index, i;
 
 	new = malloc(sizeof(listint_t));
@@ -42,6 +42,11 @@ listint_t *insert_node(listint_t **head, int number)
 	{
 		*head = new;
 		new->next = NULL;
+	}
+	else if (number < (*head)->n)
+	{
+		new->next = *head;
+		*head = new;
 	}
 	else
 	{
