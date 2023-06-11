@@ -9,7 +9,7 @@ def add_tuple(tuple_a=(), tuple_b=()):
         ln = ln_b
     new_t = []
     if ln == 0:
-        new = (tuple_a, tuple_b)
+        new = tuple(tuple_a, tuple_b)
         return new
     for i in range(ln):
         a = tuple_a[i] if i < len(tuple_a) else 0
