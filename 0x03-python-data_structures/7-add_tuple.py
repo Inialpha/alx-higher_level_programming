@@ -8,5 +8,6 @@ def add_tuple(tuple_a=(), tuple_b=()):
     if len(tuple_b) < 2:
         b = tuple_b + (0, 0)
 
-    sum = (a[0] + b[0], a[1] + b[1])
-    return sum
+    _sum = (a[0] + b[0], a[1] + b[1])
+    return _sum
+
