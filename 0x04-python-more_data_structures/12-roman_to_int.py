@@ -1,6 +1,14 @@
 #!/usr/bin/python3
+def check_alpha(string):
+    for c in string:
+        if not c.isalpha():
+            return 1
+    return 0
+
 
 def roman_to_int(roman_string):
+    if check_alpha(roman_string) == 1 or roman_string is None:
+        return 0
     num = []
     result = 0
     prev = 0
