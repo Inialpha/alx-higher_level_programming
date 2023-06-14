@@ -7,7 +7,7 @@
 void print_python_list(PyObject *p)
 {
 	int i, num_alloc, size;
-	PyObject * obj;
+	PyObject *obj;
 	PyListObject *list = (PyListObject *)p;
 
 	num_alloc = list->alloc;
@@ -22,4 +22,3 @@ void print_python_list(PyObject *p)
 		printf("Element %d: %s\n", obj->ob_type->tp_name);
 	}
 }
-	
