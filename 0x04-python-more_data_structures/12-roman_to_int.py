@@ -9,6 +9,7 @@ def check_alpha(string):
 def roman_to_int(roman_string):
     if check_alpha(roman_string) == 1 or roman_string is None:
         return 0
+    roman_string = roman_string.upper()
     num = []
     result = 0
     prev = 0
