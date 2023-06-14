@@ -40,11 +40,12 @@ void print_python_bytes(PyObject *p)
 
 void print_python_list(PyObject *p)
 {
+	PyObject *obj;
 	int i, num_alloc, size;
 
 	PyListObject *list = (PyListObject *)p;
 
-	num_alloc = list->allocated;
+	num_alloc =list->allocated;
 	size = PyList_GET_SIZE(p);
 	printf("[*] Python list info\n");
 	printf("[*] Size of the Python List = %d\n", size);
