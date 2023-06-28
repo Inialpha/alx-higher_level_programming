@@ -63,7 +63,6 @@ class Square:
                 if i != self.__size - 1:
                     print()
 
-
     def __str__(self):
         """represents the square"""
         self.my_print()
