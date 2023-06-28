@@ -64,5 +64,6 @@ class Square:
 
 
     def __str__(self):
+        """prints the square"""
         self.my_print()
         return ""
