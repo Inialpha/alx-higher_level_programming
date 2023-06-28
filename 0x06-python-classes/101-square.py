@@ -60,10 +60,11 @@ class Square:
                     print(" ", end="")
                 for j in range(self.__size):
                     print("#", end="")
-                print()
+                if i != self.__size - 1:
+                    print()
 
 
     def __str__(self):
-        """prints the square"""
+        """represents the square"""
         self.my_print()
         return ""
