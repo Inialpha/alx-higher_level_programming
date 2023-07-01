@@ -1,0 +1,26 @@
+module that multiply a metix
+
+Check module doc:
+	>>> mod_doc = __import__('2-matrix_divided').__doc__
+	>>> len(mod_doc) > 1
+	True
+
+Import function:
+	>>> matrix_div = __import__('2-matrix_divided').matrix_divided
+
+Check function doc:
+	>>> func_doc = matrix_div.__doc__
+	>>> len(func_doc) > 1
+	True
+
+Check for normal matrix:
+	>>> matrix = [[1, 2, 3],[4, 5, 6]]
+	>>> matrix_div(matrix, 3)
+	[[0.33, 0.67, 1.0], [1.33, 1.67, 2.0]]
+
+Check irregular rows:
+	>>> matrix = [[1, 2, 3],[4, 5, 7, 6]
+	>>> matrix_div(matrix, 3)
+	Traceback (most recent call last):
+        ...
+        TypeError: Each row of the matrix must have the same size

@@ -1,0 +1,38 @@
+TEST FOR MODULE 0-add_integer.py
+================================
+import function:
+	>>> add = __import__("0-add_integer").add_integer
+
+check module foc:
+	>>> mod_doc = __import__("0-add_integer").__doc__
+	>>> len(mod_doc) > 1
+	True
+
+check func_doc:
+	>>> func_doc = add.__doc__
+	>>> len(func_doc) > 1
+	True
+
+Add two int:
+	>>> add(2, 6)
+	8
+
+Add two floats:
+	>>> add(5.8, 4.0)
+	9
+
+Add an interger and a float:
+	>>> add (10, 6.7)
+	16
+
+Add a string and an int:
+	>>> add("str", 6)
+	Traceback (most recent call last):
+	...
+	TypeError: a must be an integer
+
+Add an int and a string:
+	>>> add(5, "str")
+	Traceback (most recent call last):
+		...
+	TypeError: b must be an integer

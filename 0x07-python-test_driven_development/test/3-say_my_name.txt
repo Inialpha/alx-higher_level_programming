@@ -1,0 +1,42 @@
+TEST FOR 3-say_my_name MODULE
+=============================
+
+Import module:
+	>>> mod = __import__ ("3-say_my_name")
+
+Import function:
+	>>> say = mod.say_my_name
+
+Check module doc:
+	>>> len(mod.__doc__) > 1
+	True
+
+Check fuction doc:
+	>>> len(say.__doc__) > 1
+	True
+
+Test string and string:
+	>>> say("Inimfon", "Ebong")
+	My name is Inimfon Ebong
+
+Test string and integer:
+	>>> say("Inimfon", 52)
+	Traceback (most recent call last):
+	...
+	TypeError: last_name must be a string
+
+Test integer and string:
+        >>> say(56, "Inimfon")
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Test integer and integer:
+        >>> say(100, 52)
+	Traceback (most recent call last):
+	...
+	TypeError: first_name must be a string
+
+Test one argument:
+	>>> say("Inimfon")
+	My name is Inimfon 
