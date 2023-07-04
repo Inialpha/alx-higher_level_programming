@@ -1,9 +1,10 @@
 #!/usr/bin/python3
-
 """module contaians function for indenting text"""
 
+
 def text_indentation(text):
-    """ a function that prints a text with 2 new lines after each of these characters: ., ? and :
+    """ a function that prints a text with 2 new
+    lines after each of these characters: ., ? and :
 
     Args:
         text(string): text to be indented.

@@ -1,0 +1,82 @@
+TEST FOR MODULE 101-lazy_matrix_mul
+===================================
+
+Import module:
+	>>> mod = __import__('101-lazy_matrix_mul')
+
+Import function:
+	>>> matrix_mul = mod.lazy_matrix_mul
+
+Check model doc:
+	>>> len(mod.__doc__) > 1
+	True
+
+Check function doc:
+	>>> len(matrix_mul.__doc__) > 1
+	True
+
+Check list:
+	>>> list = []
+	>>> matrix_mul("str", list)
+	Traceback (most recent call last):
+	...
+	ValueError: Scalar operands are not allowed, use '*' instead
+	>>> matrix_mul(list, "str")
+	Traceback (most recent call last):
+	...
+	ValueError: Scalar operands are not allowed, use '*' instead
+	>>> matrix_mul("str", "str")
+        Traceback (most recent call last):
+	...
+	ValueError: Scalar operands are not allowed, use '*' instead
+
+Check list of lists:
+	>>> list = [[]]
+	>>> list2 = [[]]
+	>>> matrix_mul(list, list2)
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (1,0) and (1,0) not aligned: 0 (dim 1) != 1 (dim 0)
+	>>> matrix_mul(list2, list)
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (1,0) and (1,0) not aligned: 0 (dim 1) != 1 (dim 0)
+	>>> list = [[1, 2, 3]]
+	>>> matrix_mul(list, list2)
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (1,3) and (1,0) not aligned: 3 (dim 1) != 1 (dim 0)
+
+Check normal_list:
+	>>> list = [[1, 2, 3], [4, 5, 6]]
+	>>> list2 =[[1, 2, 3], [4, 5, 6], [1, 2, 3]]
+	>>> print(matrix_mul(list, list2))
+	[[12 18 24]
+	 [30 45 60]]
+
+Check normal_list:
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4]]))
+	[[ 7 10]
+	 [15 22]]
+
+Check list containt:
+	>>> print(matrix_mul([["str", 2], [3, 4]], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	...
+	TypeError: invalid data type for einsum
+
+Check Rectangle:
+	>>> print(matrix_mul([[2, 2], [3, 4], [5, 6, 7]], [[1, 2], [3, 4]]))
+	Traceback (most recent call last):
+	...
+	ValueError: setting an array element with a sequence.
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4], [1, 2, 3]]))
+	Traceback (most recent call last):
+		...
+	ValueError: setting an array element with a sequence.
+
+Check matrix size:
+	>>> print(matrix_mul([[1, 2], [3, 4]], [[1, 2], [3, 4], [1, 2]]))
+	Traceback (most recent call last):
+	...
+	ValueError: shapes (2,2) and (3,2) not aligned: 2 (dim 1) != 3 (dim 0)

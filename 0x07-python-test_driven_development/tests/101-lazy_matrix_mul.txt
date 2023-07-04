@@ -1,0 +1,17 @@
+TEST FOR 101-lazy_matrix_mul MODULE
+===================================
+
+Import module:
+	>>> mod = __import__('101-lazy_matrix_mul')
+
+Import function:
+	>>> lazy_matrix_mul = mod.lazy_matrix_mul
+
+Check module doc:
+	>>> len(mod.__doc__) > 1
+	True
+
+Check function doc:
+	>>> len(lazy_matrix_mul.__doc__) > 1
+	True
+
