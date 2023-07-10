@@ -1,5 +1,5 @@
-TEST FOR 7-base_geometry MODULE
-===============================
+TEST FOR MODULE
+===============
 
 Import module:
 	>>> mod = __import__('7-base_geometry')
