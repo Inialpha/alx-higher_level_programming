@@ -1,0 +1,51 @@
+TEST FOR 7-base_geometry MODULE
+===============================
+
+Import module:
+	>>> mod = __import__('7-base_geometry')
+	>>> len(mod.__doc__) > 1
+	True
+
+Import Class:
+	>>> bg = mod.BaseGeometry
+	>>> len(bg.__doc__) > 1
+	True
+
+Import functions:
+	>>> area = bg.area
+	>>> len(area.__doc__) > 1
+	True
+	>>> int_v = bg.integer_validator
+	>>> len(int_v.__doc__) > 1
+	True
+
+Test area:
+	>>> a = bg()
+	>>> a.area()
+	Traceback (most recent call last):
+	...
+	Exception: area() is not implemented
+	>>> a.area("str")
+	Traceback (most recent call last):
+	...
+	TypeError: area() takes 1 positional argument but 2 were given
+
+Test int_validator:
+	>>> i = bg()
+	>>> i.integer_validator()
+	Traceback (most recent call last):
+	...
+	TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+	>>> i.integer_validator("distance", -4)
+	Traceback (most recent call last):
+	...
+	ValueError: distance must be greater than 0
+	>>> i.integer_validator("age", 0)
+	Traceback (most recent call last):
+	...
+	ValueError: age must be greater than 0
+	>>> i.integer_validator("name", "John")
+	Traceback (most recent call last):
+	...
+	TypeError: name must be an integer
+	>>> i.integer_validator("name", 10)
