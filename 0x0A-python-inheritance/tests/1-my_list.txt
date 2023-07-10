@@ -1,0 +1,41 @@
+TEST FOR MY_LIST CLASS
+======================
+
+Import module:
+	>>> mod = __import__('1-my_list')
+	>>> len(mod.__doc__) > 1
+	True
+
+Import class:
+	>>> MyClass = mod.MyList
+	>>> len(MyClass.__doc__) > 1
+	True
+
+Import function:
+	>>> print_sorted = MyClass.print_sorted
+	>>> len(print_sorted.__doc__) > 1
+	True
+
+Check argumentis:
+	>>> my_list = MyClass()
+	>>> my_list.append(1)
+	>>> my_list.append(4)
+	>>> my_list.append(2)
+	>>> my_list.append(3)
+	>>> my_list.append(5)
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+	>>> my_list.print_sorted()
+	[1, 2, 3, 4, 5]
+	>>> print(my_list)
+	[1, 4, 2, 3, 5]
+
+Check argc:
+	>>> my_list = MyClass("str")
+	Traceback (most recent call last):
+		...
+	TypeError: __init__() takes 1 positional argument but 2 were given
+	>>> my_list = MyClass()
+	>>> my_list.append("s")
+	>>> my_list.print_sorted()
+	['s']
