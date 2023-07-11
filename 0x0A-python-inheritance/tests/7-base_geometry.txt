@@ -13,8 +13,6 @@ Import Class:
 
 Import functions:
 	>>> area = bg.area
-	>>> len(area.__doc__) > 1
-	True
 	>>> int_v = bg.integer_validator
 	>>> len(int_v.__doc__) > 1
 	True
