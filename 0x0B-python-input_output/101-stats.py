@@ -2,7 +2,7 @@
 """script that reads stdin line by line and computes metrics"""
 
 
-from sys import stdin, stdout
+import sys
 status_codes = {'200': 0, '301': 0,
                 '400': 0, '401': 0,
                 '403': 0, '404': 0,
@@ -10,7 +10,7 @@ status_codes = {'200': 0, '301': 0,
 i = 0
 f_size = 0
 try:
-    for line in stdin:
+    for line in sys.stdin:
         token = line.split()
         if len(token) >= 2:
             a = i
@@ -39,4 +39,3 @@ except KeyboardInterrupt:
     for key, value in sorted(status_codes.items()):
         if value:
             print("{:s}: {:d}".format(key, value))
-    stdout.flush()
