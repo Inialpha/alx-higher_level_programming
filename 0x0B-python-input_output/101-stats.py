@@ -35,7 +35,7 @@ try:
             print("{:s}: {:d}".format(key, value))
 
 except KeyboardInterrupt:
-    print("file size: {:d}".format(f_size))
+    print("file size: {:d}".format(f_size), flush=True)
     for key, value in sorted(status_codes.items()):
         if value:
-            print("{:s}: {:d}".format(key, value))
+            print("{:s}: {:d}".format(key, value), flush=True)
