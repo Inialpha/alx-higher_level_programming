@@ -5,5 +5,5 @@ const argint = parseInt(arg);
 if (isNaN(argint)) {
   console.log('Not a number');
 } else {
-  console.log('My number: ', argint);
+  console.log(`My number: ${argint}`);
 }
