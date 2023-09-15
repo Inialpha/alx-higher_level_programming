@@ -13,7 +13,7 @@ if __name__ == '__main__':
                          passwd=password, db=database)
     cur = db.cursor()
     cur.execute("SELECT * FROM states WHERE name = %s ORDER BY id",
-            (state,))
+                (state,))
     state_row = cur.fetchall()
     for row in state_row:
         print(row)
