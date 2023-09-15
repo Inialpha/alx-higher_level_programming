@@ -3,7 +3,7 @@
 
 from model_state import Base, State
 from sqlalchemy import create_engine
-from sqlalchemy.orm import Session
+from sqlalchemy.orm import sessionmaker
 import sys
 
 if __name__ == '__main__':
@@ -12,9 +12,9 @@ if __name__ == '__main__':
     dbase = sys.argv[3]
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(user, pw, dbase))
-
-    #Base.metadata.create_all(engine)
-    session = Session(engine)
+    
+    Session = sessionmaker(bind=engine)
+    session = Session()
     states = session.query(State).order_by('id').all()
     for state in states:
         print(state.id, state.name)
