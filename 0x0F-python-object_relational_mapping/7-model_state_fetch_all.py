@@ -13,7 +13,7 @@ if __name__ == '__main__':
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(user, pw, dbase))
 
-    Base.metadata.create_all(engine)
+    #Base.metadata.create_all(engine)
     session = Session(engine)
     states = session.query(State).order_by('id').all()
     for state in states:
