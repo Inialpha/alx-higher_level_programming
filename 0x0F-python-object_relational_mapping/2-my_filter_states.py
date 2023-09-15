@@ -12,8 +12,9 @@ if __name__ == '__main__':
                          port=3306, user=username,
                          passwd=password, db=database)
     cur = db.cursor()
-    cur.execute("SELECT * FROM states WHERE name = '{}' ORDER BY id"
+    cur.execute("SELECT * FROM states ORDER BY id"
                 .format(state))
     state_row = cur.fetchall()
     for row in state_row:
-        print(row)
+        if row[1] == state:
+            print(row)
