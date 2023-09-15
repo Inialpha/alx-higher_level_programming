@@ -12,9 +12,9 @@ if __name__ == '__main__':
     dbase = sys.argv[3]
     engine = create_engine("mysql+mysqldb://{}:{}@localhost/{}"
                            .format(user, pw, dbase))
-    
+
     Session = sessionmaker(bind=engine)
     session = Session()
     states = session.query(State).order_by('id').all()
     for state in states:
-        print(state.id, state.name)
+        print("{}: {}".format(state.id, state.name))
