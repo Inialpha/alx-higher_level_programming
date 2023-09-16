@@ -3,6 +3,7 @@
 """A script that lists all City objects from the database"""
 
 from sys import argv
+from relationship_state import State
 from relationship_city import City
 from sqlalchemy import create_engine
 from sqlalchemy.orm import Session
